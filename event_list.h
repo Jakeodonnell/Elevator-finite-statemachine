@@ -20,6 +20,7 @@ struct event {
   int type;
   int source;
   int destination;
+  int button;
 };
 
 
@@ -38,7 +39,7 @@ struct eventList{
  * sorted based on  time, meaning that the first element in the linked list is 
  * always the next event to occur.
  */
-unsigned int addEvent(struct eventList* list, int type, unsigned int time, int source, int destination);
+unsigned int addEvent(struct eventList* list, int type, unsigned int time, int source, int destination, int button);
 
 /*
  * Initialize an empty event list. 

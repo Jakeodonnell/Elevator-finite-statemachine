@@ -153,9 +153,6 @@ int main(void) {
      * Manage button push events outside elevator state machine
      */
     if (currentEvent.type == EVENT_BUTTON_PUSH) {
-
-      
-
       
       if (currentEvent.destination > currentEvent.source) {
 	addPassenger(&(waitingUp[currentEvent.source]), currentEvent.time, currentEvent.source, currentEvent.destination, SORT_TIME);
@@ -164,9 +161,6 @@ int main(void) {
 	  addElementCircularBuffer(&pushedButtonsQueue, currentEvent.source);
 	}
       }
-	
-	
-      
       /* Passenger wants to go down */
       else if (currentEvent.destination < currentEvent.source) {
 	addPassenger(&(waitingDown[currentEvent.source-1]), currentEvent.time, currentEvent.source, currentEvent.destination, SORT_TIME);
@@ -217,7 +211,7 @@ int main(void) {
     /* Read remaining lines. Requires that there are no empty line at the end of the file */
     while(fscanf(eventFile, "%u%d%d", &time, &source, &destination) == 3) {
       printf("time: %d, source: %d, dest: %d \n", time, source, destination);  
-      addEvent(_eventList, EVENT_BUTTON_PUSH, time, source, destination);
+      addEvent(_eventList, EVENT_BUTTON_PUSH, time, source, destination, 1);
     }
 
   

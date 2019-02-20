@@ -7,14 +7,15 @@ void initEventList(struct eventList* list) {
   list->firstElement = NULL;
 }
 
-unsigned int addEvent(struct eventList* list, int type, unsigned int time, int source, int destination) {
+unsigned int addEvent(struct eventList* list, int type, unsigned int time, int source, int destination, int button) {
 	struct event * new_event;
 	new_event = (struct event *)malloc(sizeof(struct event));
 	new_event->time = time;
 	new_event->type = type;
 	new_event->source = source;
 	new_event->destination = destination;
-
+	new_event->button = button;
+	
 	struct eventListElement * elem;
 	elem = (struct eventListElement *)malloc(sizeof(struct eventListElement));
 	elem->data = new_event;
