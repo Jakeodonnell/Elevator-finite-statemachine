@@ -1,1 +1,1 @@
-Hissen som fungerade efter 100 år av utveckling
+Elevator simulated travelling between floors at time stamps pickingup and leaving passangers
